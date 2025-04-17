@@ -5,7 +5,7 @@
 The `flutter_pagination_plus` package for Flutter is designed that implement **pagination** for list.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mithun1st/flutter_pagination_plus/master/example/screenshots/animation.gif" width="200" alt="example">
+  <img src="https://raw.githubusercontent.com/mithun1st/flutter_pagination_plus/master/example/screenshots/animation.gif" width="500" alt="example">
 </p>
 
 

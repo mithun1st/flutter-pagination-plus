@@ -54,7 +54,7 @@ class _FlutterPaginationPlusState extends State<FlutterPaginationPlus> {
   Widget build(BuildContext context) {
     return ListView.builder(
       controller: _scrollController,
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       itemCount: widget.list.length,
       itemBuilder:
           (context, index) => Column(
@@ -70,6 +70,6 @@ class _FlutterPaginationPlusState extends State<FlutterPaginationPlus> {
   Widget _bottomWidget(bool isLoadingActive) {
     return isLoadingActive
         ? widget.scrollWidget ?? const RefreshProgressIndicator()
-        : SizedBox();
+        : const SizedBox();
   }
 }
