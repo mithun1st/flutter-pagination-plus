@@ -1,0 +1,1 @@
+enum PaginationType { infiniteScroll, loadMore }

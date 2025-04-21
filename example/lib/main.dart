@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pagination_plus/widgets/flutter_pagination_plus.dart';
+import 'package:flutter_pagination_plus/flutter_pagination_plus.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,19 +50,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
       appBar: AppBar(title: Text(widget.title)),
       body: FlutterPaginationPlus<User>(
         list: _userList,
         onChangeNextPage: () async {
           _userList.addAll(await _generateList());
         },
+        padding: EdgeInsets.symmetric(horizontal: 12),
+        paginationType: PaginationType.infiniteScroll,
         itemBuilder: (ctx, index) {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 8),
             child: ListTile(
-              tileColor: Colors.blueGrey,
-              title: Text('${_userList[index]} $index'),
+              tileColor: Colors.teal,
+              title: Text("${_userList[index]} $index/${_userList.length}"),
+              trailing: CloseButton(
+                onPressed: () {
+                  setState(() => _userList.removeAt(index));
+                },
+              ),
             ),
           );
         },
